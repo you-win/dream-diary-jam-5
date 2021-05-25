@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/CloakPerson.glb-0eecf14a7a1e37ca4ed22ccd34dfd5f2.scn"
+path="res://.import/LampPost.glb-1715a390a9ac36234c25ab66a829d75c.scn"
 
 [deps]
 
-source_file="res://assets/cloak-person/CloakPerson.glb"
-dest_files=[ "res://.import/CloakPerson.glb-0eecf14a7a1e37ca4ed22ccd34dfd5f2.scn" ]
+source_file="res://assets/blender/lamp-post/LampPost.glb"
+dest_files=[ "res://.import/LampPost.glb-1715a390a9ac36234c25ab66a829d75c.scn" ]
 
 [params]
 
@@ -28,10 +28,10 @@ meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
-animation/fps=25.0
+animation/fps=15
 animation/filter_script=""
-animation/storage=2
-animation/keep_custom_tracks=true
+animation/storage=false
+animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05
 animation/optimizer/max_angular_error=0.01

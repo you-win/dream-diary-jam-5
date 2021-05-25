@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/props/lamp-post/LampPost.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0.0666667, 0.0117647, 1 )
@@ -41,3 +42,6 @@ operation = 2
 
 [node name="CSGBox2" type="CSGBox" parent="CSGBox"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11013, 1.05573, -1.46725 )
+
+[node name="LampPost" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28516, 0, 0 )
