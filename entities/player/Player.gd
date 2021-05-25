@@ -43,23 +43,23 @@ func _physics_process(delta: float) -> void:
 	
 	# Player input
 	if Input.is_action_pressed("move_up"):
-		intended_velocity.z += SPEED * delta
+		intended_velocity.z += 1
 	if Input.is_action_pressed("move_down"):
-		intended_velocity.z -= SPEED * delta
+		intended_velocity.z -= 1
 	if Input.is_action_pressed("move_left"):
-		intended_velocity.x += SPEED * delta
+		intended_velocity.x += 1
 	if Input.is_action_pressed("move_right"):
-		intended_velocity.x -= SPEED * delta
+		intended_velocity.x -= 1
 	if Input.is_action_just_pressed("jump"):
 		intended_velocity.y += JUMP
 
 	# Gravity
-	intended_velocity.y -= 10
+	intended_velocity.y -= 5.0
 
 	fsm.run(delta)
 
 	# Friction
-	current_velocity = lerp(current_velocity, Vector3.ZERO, 0.1)
+	current_velocity = lerp(current_velocity, Vector3.ZERO, FRICTION)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("rotate_camera_right"):
