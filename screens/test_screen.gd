@@ -1,8 +1,22 @@
-extends FSMState
+extends Spatial
+
+onready var player = find_node("Player")
+
+onready var player_state_label = find_node("PlayerStateLabel")
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
+
+func _ready() -> void:
+	pass
+
+func _process(delta: float) -> void:
+	player_state_label.text = "Player state: %s" % player.fsm.current_state.name
+
+func _exit_tree() -> void:
+	player = null
+	player_state_label = null
 
 ###############################################################################
 # Connections                                                                 #
@@ -16,18 +30,4 @@ extends FSMState
 # Public functions                                                            #
 ###############################################################################
 
-func on_enter() -> void:
-	obj.current_animation = "Idle"
-	obj.anim_player.play(obj.current_animation)
 
-func run(delta: float) -> void:
-	if (obj.intended_velocity.x != 0 or obj.intended_velocity.z != 0):
-		fsm.switch_state_now(delta, fsm.states.Move)
-		return
-
-	if obj.intended_velocity.y > 0:
-		fsm.switch_state_now(delta, fsm.states.Jump)
-		return
-
-func on_exit() -> void:
-	pass

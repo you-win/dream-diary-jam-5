@@ -51,3 +51,8 @@ func switch_state_now(delta: float, state: FSMState) -> void:
 
 func switch_state_deferred(state: FSMState) -> void:
 	self.next_state = state
+
+func cleanup() -> void:
+	for state in states.keys():
+		states[state].obj = null
+	self.obj = null

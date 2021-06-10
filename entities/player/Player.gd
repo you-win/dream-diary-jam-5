@@ -6,7 +6,10 @@ const ROTATION_FULL: float = 2 * PI
 
 const FRICTION: float = 0.1
 const SPEED: float = 200.0
-const JUMP: float = 200.0
+const JUMP: float = 650.0
+const JUMP_TIME: float = 0.3
+
+const GRAVITY: float = -300.0
 
 onready var skeleton: Skeleton = $Skeleton
 
@@ -50,11 +53,12 @@ func _physics_process(delta: float) -> void:
 		intended_velocity.x += 1
 	if Input.is_action_pressed("move_right"):
 		intended_velocity.x -= 1
+	
 	if Input.is_action_just_pressed("jump"):
-		intended_velocity.y += JUMP
-
-	# Gravity
-	intended_velocity.y -= 5.0
+		intended_velocity.y += 1
+	else:
+		# Gravity
+		intended_velocity.y += GRAVITY * delta
 
 	fsm.run(delta)
 
@@ -67,6 +71,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("rotate_camera_left"):
 		current_camera_rotation -= ROTATION_EIGTH
 
+func _exit_tree() -> void:
+	fsm.cleanup()
+
 ###############################################################################
 # Connections                                                                 #
 ###############################################################################
@@ -77,9 +84,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _construct_fsm_states() -> void:
 	var idle: FSMState = load("res://entities/player/Idle.gd").new()
+	idle.name = "Idle"
 	var move: FSMState = load("res://entities/player/Move.gd").new()
+	move.name = "Move"
+	var jump: FSMState = load("res://entities/player/Jump.gd").new()
+	jump.name = "Jump"
 
-	self.fsm = FSM.new(self, [idle, move], idle)
+	self.fsm = FSM.new(self, [idle, move, jump], idle)
 
 ###############################################################################
 # Public functions                                                            #

@@ -1,4 +1,9 @@
-extends FSMState
+class_name BaseTest
+extends Reference
+
+const TEST_PREFIX: String = "test"
+
+var goth: GOTH
 
 ###############################################################################
 # Builtin functions                                                           #
@@ -16,18 +21,17 @@ extends FSMState
 # Public functions                                                            #
 ###############################################################################
 
-func on_enter() -> void:
-	obj.current_animation = "Idle"
-	obj.anim_player.play(obj.current_animation)
-
-func run(delta: float) -> void:
-	if (obj.intended_velocity.x != 0 or obj.intended_velocity.z != 0):
-		fsm.switch_state_now(delta, fsm.states.Move)
-		return
-
-	if obj.intended_velocity.y > 0:
-		fsm.switch_state_now(delta, fsm.states.Jump)
-		return
-
-func on_exit() -> void:
-	pass
+func run_tests() -> void:
+	var test_methods: Array = []
+	var methods: Array = get_method_list()
+	
+	for method in methods:
+		var method_name: String = method["name"]
+		if method_name.left(4).to_lower() == TEST_PREFIX:
+			test_methods.append(method_name)
+	
+	goth.log_message("Running %s tests" % test_methods.size())
+	for method in test_methods:
+		goth.log_message("\n%s" % method)
+		call(method)
+		goth.log_message("Done")

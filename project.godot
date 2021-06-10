@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Reference",
+"class": "BDD",
+"language": "GDScript",
+"path": "res://addons/goth/BDD.gd"
+}, {
+"base": "Reference",
+"class": "BaseTest",
+"language": "GDScript",
+"path": "res://addons/goth/BaseTest.gd"
+}, {
+"base": "Reference",
 "class": "FSM",
 "language": "GDScript",
 "path": "res://utils/fsm/FSM.gd"
@@ -18,6 +28,16 @@ _global_script_classes=[ {
 "class": "FSMState",
 "language": "GDScript",
 "path": "res://utils/fsm/FSMState.gd"
+}, {
+"base": "Reference",
+"class": "GOTH",
+"language": "GDScript",
+"path": "res://addons/goth/GOTH.gd"
+}, {
+"base": "MarginContainer",
+"class": "GOTHGui",
+"language": "GDScript",
+"path": "res://addons/goth/GOTHGui.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
@@ -30,8 +50,12 @@ _global_script_classes=[ {
 "path": "res://utils/SaveDataUtil.gd"
 } ]
 _global_script_class_icons={
+"BDD": "",
+"BaseTest": "",
 "FSM": "",
 "FSMState": "",
+"GOTH": "",
+"GOTHGui": "",
 "Player": "",
 "SaveDataUtil": ""
 }
@@ -48,7 +72,11 @@ window/size/width=1600
 window/size/height=900
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
-window/stretch/shrink=2.0
+window/stretch/shrink=3.0
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/goth/plugin.cfg" )
 
 [importer_defaults]
 
@@ -118,3 +146,4 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_environment="res://assets/default_env.tres"
+quality/dynamic_fonts/use_oversampling=false
