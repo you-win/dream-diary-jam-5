@@ -1,20 +1,28 @@
-extends Node
+extends Spatial
 
-signal message_logged(message)
+onready var viewport: Viewport = $Viewport
 
-var sdu: SaveDataUtil = SaveDataUtil.new()
-
-var current_save_data: Dictionary
-
-var rng: RandomNumberGenerator
+onready var typing_game: Node2D = $Viewport/TypingGame
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
 func _ready() -> void:
-	rng = RandomNumberGenerator.new()
-	rng.randomize()
+	viewport.set_clear_mode(Viewport.CLEAR_MODE_ONLY_NEXT_FRAME)
+	
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+
+	$Screen.material_override.albedo_texture = viewport.get_texture()
+
+func _input(event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_0):
+		pass
+
+func _exit_tree() -> void:
+	if typing_game:
+		typing_game.free()
 
 ###############################################################################
 # Connections                                                                 #
@@ -28,26 +36,4 @@ func _ready() -> void:
 # Public functions                                                            #
 ###############################################################################
 
-func log_message(message: String, is_error: bool = false) -> void:
-	if is_error:
-		message = "[ERROR] %s" % message
-		assert(false, message)
-	print(message)
-	emit_signal("message_logged", message)
 
-func does_metadata_exist() -> bool:
-	return sdu.does_metadata_exist()
-
-func load_data(path: String = "") -> Dictionary:
-	"""
-	Wrapper around SaveDataUtil.load_data(...)
-	
-	defaults to metadata value if empty string is passed
-	"""
-	return sdu.load_data(path)
-
-func save_data(file_name: String, data: Dictionary) -> void:
-	"""
-	Wrapper around SaveDataUtil.save_data(...)
-	"""
-	sdu.save_data(file_name, data)

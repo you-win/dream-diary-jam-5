@@ -73,6 +73,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _exit_tree() -> void:
 	fsm.cleanup()
+	fsm.free()
 
 ###############################################################################
 # Connections                                                                 #

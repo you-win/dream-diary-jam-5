@@ -1,5 +1,5 @@
 class_name FSMState
-extends Reference
+extends Object
 
 var name: String
 

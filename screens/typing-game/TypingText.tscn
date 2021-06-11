@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://screens/typing-game/TypingText.gd" type="Script" id=1]
+
+[node name="TypingText" type="MarginContainer"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base" type="Label" parent="."]
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="Label" parent="."]
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

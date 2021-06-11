@@ -1,5 +1,5 @@
 class_name FSM
-extends Reference
+extends Object
 
 var obj: Node
 
@@ -54,5 +54,6 @@ func switch_state_deferred(state: FSMState) -> void:
 
 func cleanup() -> void:
 	for state in states.keys():
-		states[state].obj = null
+		states[state].free()
+	states.clear()
 	self.obj = null
