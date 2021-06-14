@@ -3,19 +3,27 @@
 [ext_resource path="res://screens/typing-game/TypingText.gd" type="Script" id=1]
 
 [node name="TypingText" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Base" type="Label" parent="."]
-margin_bottom = 14.0
+modulate = Color( 1, 1, 1, 0.662745 )
+margin_top = 443.0
+margin_right = 1600.0
+margin_bottom = 457.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Top" type="Label" parent="."]
-margin_bottom = 14.0
+margin_top = 443.0
+margin_right = 1600.0
+margin_bottom = 457.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
