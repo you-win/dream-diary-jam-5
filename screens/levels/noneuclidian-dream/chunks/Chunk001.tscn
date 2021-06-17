@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk001.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 50, 0.5, 50 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 25, 0.25, 25 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 25, 25, 25 )
+
+[sub_resource type="SphereShape" id=5]
+radius = 2.71516
+
+[node name="Chunk001" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50 )
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.262115, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26212, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
+shape = SubResource( 4 )
+
+[node name="RedSpike" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88822, 2.76479, 0 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="RedSpike"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RedSpike/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="RedSpike"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 1, 0, 0, 1 )
+omni_range = 11.6696
+
+[node name="RedSpike2" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7519, 2.76479, 0 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="RedSpike2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RedSpike2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="RedSpike2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 1, 0, 0, 1 )
+omni_range = 11.6696
+
+[node name="RedSpike3" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88232, 2.76479, -13.7302 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="RedSpike3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RedSpike3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="RedSpike3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 1, 0, 0, 1 )
+omni_range = 11.6696
+
+[node name="RedSpike4" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1237, 2.76479, 11.709 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="RedSpike4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RedSpike4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="RedSpike4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 1, 0, 0, 1 )
+omni_range = 11.6696
+
+[node name="Wall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6595, 7.32877, 0 )
+height = 15.4375
+depth = 47.2864
+
+[node name="Wall2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8471, 7.32877, 15.2011 )
+height = 15.4375
+depth = 21.2723
+
+[node name="Wall4" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.654, 7.32877, 24.9777 )
+height = 15.4375
+depth = 21.2723
+
+[node name="Wall5" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.7614, 7.32877, 24.0331 )
+height = 15.4375
+depth = 21.2723
+
+[node name="Wall3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0655, 7.32877, -16.1308 )
+height = 15.4375
+depth = 21.2723
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 23.3826, 0 )
+light_energy = 0.25
+spot_range = 73.2

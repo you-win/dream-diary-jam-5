@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunkn1n11.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk0n11.gd" type="Script" id=2]
+
+[node name="Chunk0n11" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, -50 )
+script = ExtResource( 2 )

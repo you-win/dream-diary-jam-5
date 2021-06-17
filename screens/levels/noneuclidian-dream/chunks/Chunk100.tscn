@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://screens/levels/noneuclidian-dream/BaseChunk.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk100.gd" type="Script" id=2]
+
+[node name="Chunk100" instance=ExtResource( 1 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 50, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="Wall" type="CSGBox" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.036, 7.32877, 0 )
+height = 15.4375
+depth = 50.5113
+
+[node name="Wall3" type="CSGBox" parent="." index="2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.4193, 7.32877, 23.2045 )
+height = 15.4375
+depth = 14.103
+
+[node name="Wall4" type="CSGBox" parent="." index="3"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.7654, 7.32877, 23.2045 )
+height = 15.4375
+depth = 14.103
+
+[node name="Wall5" type="CSGBox" parent="." index="4"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.56207, 7.32877, -23.4169 )
+height = 15.4375
+depth = 29.3933
+
+[node name="Wall2" type="CSGBox" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1899, 7.32877, 0 )
+height = 15.4375
+depth = 50.5113

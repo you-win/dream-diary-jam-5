@@ -5,7 +5,8 @@ const ROTATION_EIGTH: float = PI / 4
 const ROTATION_FULL: float = 2 * PI
 
 const FRICTION: float = 0.1
-const SPEED: float = 200.0
+#const SPEED: float = 600.0
+const SPEED: float = 250.0
 const JUMP: float = 650.0
 const MAX_FALL_SPEED: float = -10.0
 
@@ -33,6 +34,8 @@ func _ready() -> void:
 	anim_player.play(current_animation)
 
 	_construct_fsm_states()
+	
+#	$CameraMount/Camera.transform.origin.y = 18
 
 func _physics_process(delta: float) -> void:
 	# Camera control

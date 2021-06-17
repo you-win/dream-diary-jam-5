@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk100-0.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 50, 0.5, 50 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 25, 0.25, 25 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 25, 25, 25 )
+
+[node name="Chunk100-0" type="Spatial"]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 50, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.262115, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26212, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
+shape = SubResource( 4 )
+
+[node name="Wall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.036, 7.32877, 0 )
+height = 15.4375
+depth = 50.5113
+
+[node name="Wall3" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.4193, 7.32877, 23.2045 )
+height = 15.4375
+depth = 14.103
+
+[node name="Wall4" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.7654, 7.32877, 23.2045 )
+height = 15.4375
+depth = 14.103
+
+[node name="Wall5" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.4193, 7.32877, -22.6347 )
+height = 15.4375
+depth = 14.103
+
+[node name="Wall6" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.7654, 7.32877, -22.6347 )
+height = 15.4375
+depth = 14.103
+
+[node name="Wall2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1899, 7.32877, 0 )
+height = 15.4375
+depth = 50.5113

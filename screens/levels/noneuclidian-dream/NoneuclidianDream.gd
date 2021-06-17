@@ -18,11 +18,11 @@ func _ready() -> void:
 # Connections                                                                 #
 ###############################################################################
 
-func _load_surrounding_chunks(chunk_name: String, surrounding_chunks: Dictionary) -> void:
-	if chunk_name == previous_chunk_name:
+func _load_surrounding_chunks(current_chunk_name: String, surrounding_chunks: Dictionary) -> void:
+	if current_chunk_name == previous_chunk_name:
 		return
 	else:
-		previous_chunk_name = chunk_name
+		previous_chunk_name = current_chunk_name
 	
 	var current_loaded_chunks: Array = [] # String
 	for chunk in chunks.get_children():

@@ -1,18 +1,18 @@
-class_name BaseChunk
 extends Spatial
 
-signal should_load_chunks(chunk_name, surrounding_chunks)
-
-onready var area: Area = $MeshInstance/Area
-
-var surrounding_chunks: Dictionary = {}
+var can_interact: bool = false
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
 func _ready() -> void:
-	area.connect("body_entered", self, "_on_body_entered")
+	$Area.connect("body_entered", self, "_on_body_entered")
+	$Area.connect("body_exited", self, "_on_body_exited")
+
+func _unhandled_input(event: InputEvent) -> void:
+	if (can_interact and event.is_action_pressed("interact")):
+		get_tree().change_scene("res://screens/levels/DreamHub.tscn")
 
 ###############################################################################
 # Connections                                                                 #
@@ -20,7 +20,11 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		emit_signal("should_load_chunks", self.name, surrounding_chunks)
+		can_interact = true
+
+func _on_body_exited(body: Node) -> void:
+	if body.is_in_group("Player"):
+		can_interact = false
 
 ###############################################################################
 # Private functions                                                           #

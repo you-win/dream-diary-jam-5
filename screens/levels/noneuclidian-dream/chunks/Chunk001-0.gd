@@ -5,8 +5,7 @@ extends BaseChunk
 ###############################################################################
 
 func _ready() -> void:
-	surrounding_chunks["Chunk0"] = "res://screens/levels/noneuclidian-dream/Chunk0.tscn"
-	surrounding_chunks["Chunk1"] = "res://screens/levels/noneuclidian-dream/Chunk1.tscn"
+	surrounding_chunks["StartChunk-0"] = "res://screens/levels/noneuclidian-dream/chunks/StartChunk-0.tscn"
 
 ###############################################################################
 # Connections                                                                 #

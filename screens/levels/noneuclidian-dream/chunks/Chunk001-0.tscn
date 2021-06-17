@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk001-0.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 50, 0.5, 50 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 25, 0.25, 25 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 25, 25, 25 )
+
+[sub_resource type="SphereShape" id=5]
+radius = 2.71516
+
+[node name="Chunk001-0" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.262115, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26212, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
+shape = SubResource( 4 )
+
+[node name="YellowSpike" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88822, 2.76479, -11 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="YellowSpike"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowSpike/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="YellowSpike"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 0.921569, 1, 0, 1 )
+omni_range = 11.6696
+
+[node name="YellowSpike1" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7519, 2.76479, -11 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="YellowSpike1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowSpike1/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="YellowSpike1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 0.921569, 1, 0, 1 )
+omni_range = 11.6696
+
+[node name="YellowSpike2" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8823, 2.76479, -13.7302 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="YellowSpike2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowSpike2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="YellowSpike2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 0.921569, 1, 0, 1 )
+omni_range = 11.6696
+
+[node name="YellowSpike3" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1237, 2.76479, -10.291 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="YellowSpike3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowSpike3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="YellowSpike3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 0.921569, 1, 0, 1 )
+omni_range = 11.6696
+
+[node name="YellowSpike4" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89541, 2.76479, -10.291 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="YellowSpike4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowSpike4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="YellowSpike4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 0.921569, 1, 0, 1 )
+omni_range = 11.6696
+
+[node name="Wall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.451, 7.32877, 0 )
+height = 15.4375
+depth = 50.5113
