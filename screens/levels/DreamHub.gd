@@ -31,15 +31,15 @@ func _process(delta: float) -> void:
 
 func _on_forest_gate_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		get_tree().change_scene("res://screens/levels/forest-dream/ForestDream.tscn")
+		GameManager.main.change_scene("res://screens/levels/forest-dream/ForestDream.tscn")
 
 func _on_billboard_gate_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		get_tree().change_scene("res://screens/levels/billboard-dream/BillboardDream.tscn")
+		GameManager.main.change_scene("res://screens/levels/billboard-dream/BillboardDream.tscn")
 
 func _on_noneclidian_gate_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		get_tree().change_scene("res://screens/levels/noneuclidian-dream/NoneuclidianDream.tscn")
+		GameManager.main.change_scene("res://screens/levels/noneuclidian-dream/NoneuclidianDream.tscn")
 
 ###############################################################################
 # Private functions                                                           #

@@ -1,30 +1,17 @@
-extends Spatial
+extends CanvasLayer
 
-var can_interact: bool = false
+onready var viewport: Viewport = $ViewportContainer/Viewport
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
 func _ready() -> void:
-	$Area.connect("body_entered", self, "_on_body_entered")
-	$Area.connect("body_exited", self, "_on_body_exited")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if (can_interact and event.is_action_pressed("interact")):
-		GameManager.main.change_scene("res://screens/levels/DreamHub.tscn")
+	pass
 
 ###############################################################################
 # Connections                                                                 #
 ###############################################################################
-
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Player"):
-		can_interact = true
-
-func _on_body_exited(body: Node) -> void:
-	if body.is_in_group("Player"):
-		can_interact = false
 
 ###############################################################################
 # Private functions                                                           #
@@ -34,4 +21,7 @@ func _on_body_exited(body: Node) -> void:
 # Public functions                                                            #
 ###############################################################################
 
-
+func change_scene(path: String) -> void:
+	var new_scene: Spatial = load(path).instance()
+	viewport.get_child(0).queue_free()
+	viewport.call_deferred("add_child", new_scene)
