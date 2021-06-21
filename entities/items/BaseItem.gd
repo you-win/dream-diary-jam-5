@@ -1,13 +1,14 @@
-extends CanvasLayer
+class_name BaseItem
+extends Spatial
 
-onready var viewport: Viewport = $ViewportContainer/Viewport
+onready var mesh_parent: Spatial = $MeshParent
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
 func _ready() -> void:
-	GameManager.main = self
+	pass
 
 ###############################################################################
 # Connections                                                                 #
@@ -21,7 +22,14 @@ func _ready() -> void:
 # Public functions                                                            #
 ###############################################################################
 
-func change_scene(path: String) -> void:
-	var new_scene: Spatial = load(path).instance()
-	viewport.get_child(0).queue_free()
-	viewport.call_deferred("add_child", new_scene)
+func equip() -> Tuple2:
+	GameManager.log_message("Not yet implemented for %s" % self.name, true)
+	return null
+
+func use() -> Tuple2:
+	GameManager.log_message("Not yet implemented for %s" % self.name, true)
+	return null
+
+func inspect() -> Tuple2:
+	GameManager.log_message("Not yet implemented for %s" % self.name, true)
+	return null

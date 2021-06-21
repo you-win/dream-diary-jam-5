@@ -8,7 +8,7 @@ var current_save_data: Dictionary
 
 var rng: RandomNumberGenerator
 
-onready var main: CanvasLayer = get_tree().root.get_node("MainDisplay")
+onready var main: CanvasLayer
 
 ###############################################################################
 # Builtin functions                                                           #

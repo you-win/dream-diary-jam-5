@@ -1,13 +1,11 @@
-extends CanvasLayer
-
-onready var viewport: Viewport = $ViewportContainer/Viewport
+extends BaseItem
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
 func _ready() -> void:
-	GameManager.main = self
+	pass
 
 ###############################################################################
 # Connections                                                                 #
@@ -21,7 +19,11 @@ func _ready() -> void:
 # Public functions                                                            #
 ###############################################################################
 
-func change_scene(path: String) -> void:
-	var new_scene: Spatial = load(path).instance()
-	viewport.get_child(0).queue_free()
-	viewport.call_deferred("add_child", new_scene)
+func equip() -> Tuple2:
+	return Tuple2.new("Equipped the flute!", $MeshParent)
+
+func use() -> Tuple2:
+	return Tuple2.new("You played some broken notes on the flute. You feel dizzy.", null)
+
+func inspect() -> Tuple2:
+	return Tuple2.new("", "")

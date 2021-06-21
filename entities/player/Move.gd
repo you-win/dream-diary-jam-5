@@ -35,6 +35,10 @@ func run(delta: float) -> void:
 		obj.intended_velocity = Vector3(h_movement.x, obj.intended_velocity.y, h_movement.y)
 
 	obj.current_velocity = obj.move_and_slide(obj.intended_velocity, Vector3.UP)
+	
+	if (obj.current_velocity.x > 0.1 or obj.current_velocity.x < -0.1 or
+			obj.current_velocity.z > 0.1 or obj.current_velocity.z < -0.1):
+		obj.step_sounds.play_step_sound()
 
 	# Switch to idle if we slow down enough
 	if (not obj.current_velocity.length() > 0.1 and not obj.current_velocity.length() < - 0.1):

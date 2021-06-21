@@ -26,6 +26,8 @@ var fsm: FSM
 onready var camera_mount: Spatial = $CameraMount
 var current_camera_rotation: float = 0.0
 
+onready var step_sounds: Node = $StepSounds
+
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
