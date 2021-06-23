@@ -1,13 +1,11 @@
-class_name BaseTest
-extends Reference
-
-const TEST_PREFIX: String = "test"
-
-var goth: GOTH
+extends Node
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
+
+func _ready() -> void:
+	pass
 
 ###############################################################################
 # Connections                                                                 #
@@ -17,21 +15,21 @@ var goth: GOTH
 # Private functions                                                           #
 ###############################################################################
 
+func _cleanup_asps() -> void:
+	if get_child_count() > 0:
+		for c in get_children():
+			c.queue_free()
+
 ###############################################################################
 # Public functions                                                            #
 ###############################################################################
 
-func run_tests() -> void:
-	var test_methods: Array = []
-	var methods: Array = get_method_list()
+func stop_music() -> void:
+	_cleanup_asps()
+
+func play_main_menu_music() -> void:
+	_cleanup_asps()
 	
-	for method in methods:
-		var method_name: String = method["name"]
-		if method_name.left(4).to_lower() == TEST_PREFIX:
-			test_methods.append(method_name)
+	var main_menu_asp: AudioStreamPlayer = load("res://utils/bgm/MainMenuASP.tscn").instance()
 	
-	goth.log_message("Running %s tests" % test_methods.size())
-	for method in test_methods:
-		goth.log_message("\n%s" % method)
-		call(method)
-		goth.log_message("Done")
+	call_deferred("add_child", main_menu_asp)

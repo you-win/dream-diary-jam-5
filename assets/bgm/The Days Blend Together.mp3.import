@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The Days Blend Together.mp3-d88d6852bb8c03bfcb32a96831bd3561.mp3str"
+
+[deps]
+
+source_file="res://assets/bgm/The Days Blend Together.mp3"
+dest_files=[ "res://.import/The Days Blend Together.mp3-d88d6852bb8c03bfcb32a96831bd3561.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

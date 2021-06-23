@@ -1,11 +1,11 @@
-extends Spatial
+extends MeshInstance
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
-func _ready() -> void:
-	BGM.stop_music()
+func _physics_process(delta: float) -> void:
+	self.rotate_y(delta)
 
 ###############################################################################
 # Connections                                                                 #
