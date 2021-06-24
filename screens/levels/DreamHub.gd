@@ -14,6 +14,10 @@ func _ready() -> void:
 	$NoneuclidianGate/Area.connect("body_entered", self, "_on_noneclidian_gate_entered")
 	
 	player = get_node("Player")
+	
+	yield(get_tree(), "idle_frame")
+	
+	BGM.play_dream_hub_music()
 
 func _process(delta: float) -> void:
 	if player.get_slide_count() > 1:

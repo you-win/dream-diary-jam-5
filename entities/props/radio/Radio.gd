@@ -1,25 +1,41 @@
 extends Spatial
 
-onready var csg_box: Spatial = $CSGBox
-onready var camera_pivot: Spatial = $CameraPivot
+onready var area: Area = $Area
+
+onready var music: Node = $Music
+
+var is_player_in_range: bool = false
+
+var music_track_size: int
+var current_track: int = 0
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
 func _ready() -> void:
-	yield(get_tree(), "idle_frame")
+	area.connect("body_entered", self, "_on_body_entered")
+	area.connect("body_exited", self, "_on_body_exited")
 	
-	BGM.play_main_menu_music()
+	music_track_size = music.get_child_count()
+	
+	play_next_track()
 
-func _physics_process(delta: float) -> void:
-	camera_pivot.rotate_y(0.005)
-	csg_box.rotate_x(0.025)
-	csg_box.rotate_y(0.025)
+func _unhandled_input(_event: InputEvent) -> void:
+	if (is_player_in_range and Input.is_action_just_pressed("interact")):
+		play_next_track()
 
 ###############################################################################
 # Connections                                                                 #
 ###############################################################################
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("Player"):
+		is_player_in_range = true
+
+func _on_body_exited(body: Node) -> void:
+	if body.is_in_group("Player"):
+		is_player_in_range = false
 
 ###############################################################################
 # Private functions                                                           #
@@ -29,4 +45,16 @@ func _physics_process(delta: float) -> void:
 # Public functions                                                            #
 ###############################################################################
 
-
+func play_next_track() -> void:
+	match current_track:
+		0:
+			music.get_child(0).stream_paused = false
+			current_track = 1
+		1:
+			music.get_child(0).stream_paused = true
+			music.get_child(1).stream_paused = false
+			current_track = 2
+		2:
+			for c in music.get_children():
+				c.stream_paused = true
+			current_track = 0

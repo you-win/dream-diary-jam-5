@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Back Home with a Melon.mp3-bbe818732597a637178c0ced55cd6c63.mp3str"
+
+[deps]
+
+source_file="res://assets/bgm/Back Home with a Melon.mp3"
+dest_files=[ "res://.import/Back Home with a Melon.mp3-bbe818732597a637178c0ced55cd6c63.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

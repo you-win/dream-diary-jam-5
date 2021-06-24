@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Old Garage Tape.mp3-65af7bc31660ddd7fa5d0638785e060e.mp3str"
+
+[deps]
+
+source_file="res://assets/bgm/Old Garage Tape.mp3"
+dest_files=[ "res://.import/Old Garage Tape.mp3-65af7bc31660ddd7fa5d0638785e060e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

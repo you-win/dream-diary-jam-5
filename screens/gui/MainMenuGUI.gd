@@ -19,10 +19,6 @@ func _ready() -> void:
 	
 	if not GameManager.does_metadata_exist():
 		continue_button.visible = false
-	
-	yield(get_tree(), "idle_frame")
-	
-	BGM.play_main_menu_music()
 
 ###############################################################################
 # Connections                                                                 #

@@ -33,3 +33,10 @@ func play_main_menu_music() -> void:
 	var main_menu_asp: AudioStreamPlayer = load("res://utils/bgm/MainMenuASP.tscn").instance()
 	
 	call_deferred("add_child", main_menu_asp)
+
+func play_dream_hub_music() -> void:
+	_cleanup_asps()
+	
+	var not_so_quietly_asp: AudioStreamPlayer = load("res://utils/bgm/NotSoQuietlyASP.tscn").instance()
+	
+	call_deferred("add_child", not_so_quietly_asp)
