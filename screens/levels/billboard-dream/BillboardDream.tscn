@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://screens/levels/billboard-dream/props/BillboardLamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://entities/props/wood-board/WoodBoard.tscn" type="PackedScene" id=5]
 [ext_resource path="res://screens/levels/billboard-dream/props/BillboardDreamLight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/props/pillar/Pillar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/items/ForestKey.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0.0666667, 0.0117647, 1 )
@@ -140,7 +141,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.367, 10, -15.2038 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04987, 1.39971 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1725, 0.794521, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3241, 0.794521, -5.66768 )
 width = 8.0
 depth = 7.0
 
@@ -148,6 +149,9 @@ depth = 7.0
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGBox/StaticBody"]
 shape = SubResource( 4 )
+
+[node name="ForestKey" parent="CSGBox" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34939, 0 )
 
 [node name="Mound" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.917157, 0, 0.398525, 0, 1, 0, -0.398525, 0, -0.917157, -107.174, 2.37698, 0 )

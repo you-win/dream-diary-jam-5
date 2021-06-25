@@ -21,6 +21,7 @@ surfaces/0 = {
 
 [node name="ForestKey" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+item_name = "Forest Key"
 
 [node name="ForestKey" type="Spatial" parent="MeshParent" index="0"]
 

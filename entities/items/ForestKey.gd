@@ -4,8 +4,8 @@ extends BaseItem
 # Builtin functions                                                           #
 ###############################################################################
 
-func _ready() -> void:
-	pass
+func _physics_process(delta: float) -> void:
+	rotate_y(delta)
 
 ###############################################################################
 # Connections                                                                 #
@@ -19,11 +19,4 @@ func _ready() -> void:
 # Public functions                                                            #
 ###############################################################################
 
-func equip() -> Tuple2:
-	return Tuple2.new("Equipped the forest key!", $MeshParent)
 
-func use() -> Tuple2:
-	return Tuple2.new("Tried to use the forest key. Nothing happened.", null)
-
-func inspect() -> Tuple2:
-	return Tuple2.new("", "")

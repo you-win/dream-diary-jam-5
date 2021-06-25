@@ -13,7 +13,7 @@ onready var console: VBoxContainer = $SuperContainer/MarginContainer/HBoxContain
 ###############################################################################
 
 func _ready() -> void:
-	add_item("Flute", {})
+	add_item("Flute")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_ui"):
@@ -40,12 +40,57 @@ func _on_inventory_action(item_name: String, action_name: String) -> void:
 						{
 							"text": "to equip the flute.",
 							"effects": ["normal"]
+						},
+						{
+							"text": " It didn't work.",
+							"effects": ["fade"]
 						}
 					])
 				"use":
 					add_regular_log("You tried to play the flute. You really should have practiced more.")
+					
+					GameManager.main.change_scene("res://screens/levels/DreamHub.tscn")
 				"inspect":
 					add_regular_log("A flute. You don't remember when you bought this.")
+		"Forest Key":
+			match action_name:
+				"equip":
+					add_regular_log("You firmly grasped the key.")
+				"use":
+					add_fancy_log([
+						{
+							"text": "You ",
+							"effects": ["normal"]
+						},
+						{
+							"text": "wiggled ",
+							"effects": ["wave", "shake"]
+						},
+						{
+							"text": "the key around in front of you.",
+							"effects": ["normal"]
+						}
+					])
+					
+					# Check if in dream hub, if so, allow entry to new zone
+					var dream_hub = GameManager.main.viewport.get_node_or_null("DreamHub")
+					if dream_hub:
+						dream_hub.blocker.queue_free()
+				"inspect":
+					add_fancy_log([
+						{
+							"text": "It's a very ",
+							"effects": ["normal"]
+						},
+						{
+							"text": "grassy ",
+							"effects": ["shake"]
+						},
+						{
+							"text": "key.",
+							"effects": ["normal"]
+						}
+					])
 
 ###############################################################################
 # Private functions                                                           #
@@ -55,7 +100,7 @@ func _on_inventory_action(item_name: String, action_name: String) -> void:
 # Public functions                                                            #
 ###############################################################################
 
-func add_item(item_name: String, _data: Dictionary) -> void:
+func add_item(item_name: String) -> void:
 	var item_listing: ItemListing = ItemListing.instance()
 	item_listing.item_label_text = item_name
 	inventory.add_child(item_listing)

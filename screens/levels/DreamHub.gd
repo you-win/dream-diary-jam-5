@@ -1,5 +1,6 @@
 extends Spatial
 
+onready var blocker: StaticBody = $ForestGate/Blocker
 onready var forest_gate_blocker: int = $ForestGate/Blocker.get_instance_id()
 
 var player
