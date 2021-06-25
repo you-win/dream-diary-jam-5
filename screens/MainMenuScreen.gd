@@ -10,7 +10,7 @@ onready var camera_pivot: Spatial = $CameraPivot
 func _ready() -> void:
 	yield(get_tree(), "idle_frame")
 	
-	BGM.play_main_menu_music()
+	BGM.play_music(BGM.Track.THE_DAYS_BLEND_TOGETHER)
 
 func _physics_process(delta: float) -> void:
 	camera_pivot.rotate_y(0.005)

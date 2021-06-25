@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 	yield(get_tree(), "idle_frame")
 	
-	BGM.play_dream_hub_music()
+	BGM.play_music(BGM.Track.NOT_SO_QUIETLY)
 
 func _process(delta: float) -> void:
 	if player.get_slide_count() > 1:

@@ -36,8 +36,6 @@ func _ready() -> void:
 	anim_player.play(current_animation)
 
 	_construct_fsm_states()
-	
-#	$CameraMount/Camera.transform.origin.y = 18
 
 func _physics_process(delta: float) -> void:
 	# Camera control

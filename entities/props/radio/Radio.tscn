@@ -11,15 +11,17 @@ radius = 2.35153
 [node name="Radio" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Music" type="Node" parent="." index="1"]
+[node name="Music" type="Spatial" parent="." index="1"]
 
 [node name="OldGarageTape" type="AudioStreamPlayer3D" parent="Music" index="0"]
 stream = ExtResource( 3 )
+unit_size = 5.0
 autoplay = true
 stream_paused = true
 
 [node name="AcidBounce" type="AudioStreamPlayer3D" parent="Music" index="1"]
 stream = ExtResource( 4 )
+unit_size = 5.0
 autoplay = true
 stream_paused = true
 

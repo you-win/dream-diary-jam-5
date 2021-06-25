@@ -2,6 +2,8 @@ extends Node
 
 signal message_logged(message)
 
+const PLAYER_GROUP: String = "Player"
+
 var sdu: SaveDataUtil = SaveDataUtil.new()
 
 var current_save_data: Dictionary

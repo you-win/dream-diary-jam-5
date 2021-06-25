@@ -30,11 +30,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 ###############################################################################
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group(GameManager.PLAYER_GROUP):
 		is_player_in_range = true
 
 func _on_body_exited(body: Node) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group(GameManager.PLAYER_GROUP):
 		is_player_in_range = false
 
 ###############################################################################
