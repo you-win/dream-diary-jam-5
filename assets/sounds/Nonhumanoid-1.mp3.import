@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Nonhumanoid-1.mp3-1672bf82ce37c69924d8d605eac0b4bd.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Nonhumanoid-1.mp3"
+dest_files=[ "res://.import/Nonhumanoid-1.mp3-1672bf82ce37c69924d8d605eac0b4bd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

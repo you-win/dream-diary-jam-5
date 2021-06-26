@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://screens/levels/billboard-dream/props/BillboardLamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://screens/levels/billboard-dream/props/BillboardDreamLight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/props/pillar/Pillar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/items/ForestKey.tscn" type="PackedScene" id=8]
+[ext_resource path="res://screens/levels/billboard-dream/props/FirTreeGrouping.tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0.0666667, 0.0117647, 1 )
@@ -132,16 +133,172 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.57191, 1.99119, 26.2419 )
 [node name="BillboardFirTree17" parent="Trees" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5515, 1.99119, 21.8947 )
 
+[node name="BillboardFirTree18" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5515, 1.99119, 4.8947 )
+
+[node name="BillboardFirTree19" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5515, 1.99119, 18.8947 )
+
+[node name="BillboardFirTree20" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4485, 1.99119, 36.8947 )
+
+[node name="FirTreeGrouping" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 33 )
+
+[node name="FirTreeGrouping2" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 60 )
+
+[node name="FirTreeGrouping3" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 93 )
+
+[node name="FirTreeGrouping4" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 93 )
+
+[node name="FirTreeGrouping5" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 93 )
+
+[node name="FirTreeGrouping6" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 58 )
+
+[node name="FirTreeGrouping7" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 79 )
+
+[node name="FirTreeGrouping8" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 0, 61 )
+
+[node name="FirTreeGrouping9" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, 36 )
+
+[node name="FirTreeGrouping10" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 56 )
+
+[node name="FirTreeGrouping11" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 36 )
+
+[node name="FirTreeGrouping12" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 2 )
+
+[node name="FirTreeGrouping13" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -29 )
+
+[node name="FirTreeGrouping14" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0, -29 )
+
+[node name="FirTreeGrouping15" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0, 25 )
+
+[node name="FirTreeGrouping16" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0, 46 )
+
+[node name="FirTreeGrouping17" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110, 0, 46 )
+
+[node name="FirTreeGrouping18" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110, 0, 71 )
+
+[node name="FirTreeGrouping19" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0, 79 )
+
+[node name="FirTreeGrouping20" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -134, 0, 56 )
+
+[node name="FirTreeGrouping21" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 0, 56 )
+
+[node name="FirTreeGrouping22" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 0, 34 )
+
+[node name="FirTreeGrouping23" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129, 0, -32 )
+
+[node name="FirTreeGrouping24" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -140, 0, -8 )
+
+[node name="FirTreeGrouping25" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -140, 0, 21 )
+
+[node name="FirTreeGrouping26" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -130, 0, 33 )
+
+[node name="FirTreeGrouping27" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 16 )
+
+[node name="FirTreeGrouping28" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -14 )
+
+[node name="FirTreeGrouping29" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -14 )
+
+[node name="FirTreeGrouping30" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -28 )
+
+[node name="FirTreeGrouping31" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 18 )
+
+[node name="FirTreeGrouping32" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 46 )
+
+[node name="FirTreeGrouping33" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 85 )
+
+[node name="FirTreeGrouping34" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, 108 )
+
+[node name="FirTreeGrouping35" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129, 0, 92 )
+
+[node name="FirTreeGrouping36" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129, 0, 111 )
+
+[node name="FirTreeGrouping37" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 111 )
+
+[node name="FirTreeGrouping38" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 104 )
+
+[node name="FirTreeGrouping39" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 131 )
+
+[node name="FirTreeGrouping40" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, 118 )
+
+[node name="FirTreeGrouping41" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 0, 118 )
+
+[node name="FirTreeGrouping42" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111, 0, 139 )
+
+[node name="FirTreeGrouping43" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 114 )
+
+[node name="FirTreeGrouping44" parent="Trees" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 131 )
+
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.367, 10, -15.2038 )
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 1.633, 10, 14.7962 )
+
+[node name="Pillar2" parent="Pillars" instance=ExtResource( 7 )]
+transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -18.367, 10, 32.7962 )
+
+[node name="Pillar3" parent="Pillars" instance=ExtResource( 7 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -25.367, 10, 51.7962 )
+
+[node name="Pillar4" parent="Pillars" instance=ExtResource( 7 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -25.367, 10, 80.7962 )
+
+[node name="Pillar5" parent="Pillars" instance=ExtResource( 7 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2.367, 10, 80.7962 )
+
+[node name="Pillar6" parent="Pillars" instance=ExtResource( 7 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -2.367, 10, 53.7962 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04987, 1.39971 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3241, 0.794521, -5.66768 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6759, 0.794521, 71.3323 )
 width = 8.0
 depth = 7.0
 
@@ -152,6 +309,14 @@ shape = SubResource( 4 )
 
 [node name="ForestKey" parent="CSGBox" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34939, 0 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0250931, 1.76669, 0.0932159 )
+operation = 2
+
+[node name="SpotLight" type="SpotLight" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7, 0 )
+spot_range = 10.0
 
 [node name="Mound" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.917157, 0, 0.398525, 0, 1, 0, -0.398525, 0, -0.917157, -107.174, 2.37698, 0 )

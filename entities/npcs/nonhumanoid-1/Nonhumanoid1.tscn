@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/blender/nonhumanoid-1/m_nonhumanoid_1.material" type="Material" id=1]
 [ext_resource path="res://entities/npcs/nonhumanoid-1/Nonhumanoid1.gd" type="Script" id=2]
+[ext_resource path="res://assets/sounds/NonhumanoidGasping.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Mball005"
@@ -332,3 +333,5 @@ material/0 = null
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 3 )
 anims/Rest = SubResource( 4 )
+
+[node name="NonhumanoidGasping" parent="." instance=ExtResource( 3 )]
