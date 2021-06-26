@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/bgm/Back Home with a Melon.mp3" type="AudioStream" id=1]
+[ext_resource path="res://utils/bgm/BackHomeWithAMelonASP.gd" type="Script" id=2]
 
 [node name="BackHomeWithAMelonASP" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]

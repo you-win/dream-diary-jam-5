@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://screens/levels/forest-dream/the-tower/CreditsScroll.gd" type="Script" id=1]
+
+[node name="CreditsScroll" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 0.95
+color = Color( 0, 0, 0, 0.392157 )

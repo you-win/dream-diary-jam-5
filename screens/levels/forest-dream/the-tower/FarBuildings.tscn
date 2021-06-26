@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 1000, 1000 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 60, 60, 20 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 60, 180, 20 )
+
+[sub_resource type="CylinderMesh" id=3]
+top_radius = 60.0
+bottom_radius = 10.0
+height = 94.553
+
+[node name="FarBuildings" type="Spatial"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 30, 53 )
+
+[node name="Ground" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 32, 0 )
+width = 20.0
+height = 80.0
+depth = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 30, -1 )
+operation = 2
+width = 16.0
+height = 24.0
+depth = 22.0
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 37, 0 )
+width = 32.0
+height = 96.0
+depth = 24.0
+
+[node name="CSGSphere" type="CSGSphere" parent="CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 68, 0 )
+radius = 23.0
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox2/CSGSphere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0 )
+operation = 2
+width = 22.0
+height = 12.0
+depth = 46.0
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 9, 35 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 9, -15 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -19, -35 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( -3.78552e-08, 1, 2.18557e-08, -0.707107, -4.2222e-08, 0.707107, 0.707107, 1.13133e-08, 0.707107, 166, -19, -1 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="AptBlock1" type="MeshInstance" parent="."]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -91, 9, -4.00001 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="AptBlock2" type="MeshInstance" parent="."]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -131, 9, -4.00001 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="AptBlock3" type="MeshInstance" parent="."]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -180, 9, -4.00001 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="AptBlock4" type="MeshInstance" parent="."]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -230, 26.5, -4 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="AptBlock5" type="MeshInstance" parent="."]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -142.5, 59, 91 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="AptBlock6" type="MeshInstance" parent="."]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -202.5, 59, 91 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="AptBlock7" type="MeshInstance" parent="."]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -287.5, 59, 91 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="AptBlock10" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 15, 76.5, 71 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Funnel" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 32, 68 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Funnel2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 24.5, 68 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Funnel3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 106.5, 84.5, 68 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Funnel4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 106.5, 139.5, 68 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Funnel5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 229, 112, 68 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 2.5, 0, 0, 0, -1.09278e-07, 2.5, 0, -2.5, -1.09278e-07, 0, 297.5, 0 )
+spot_range = 775.0
+spot_angle = 65.7616

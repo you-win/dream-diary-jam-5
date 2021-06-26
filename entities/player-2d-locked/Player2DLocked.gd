@@ -23,6 +23,7 @@ var current_velocity: Vector3 = Vector3.ZERO
 var fsm: FSM
 
 onready var camera_mount: Spatial = $CameraMount
+onready var camera: Camera = $CameraMount/Camera
 var current_camera_rotation: float = 0.0
 
 onready var step_sounds: Node = $StepSounds
