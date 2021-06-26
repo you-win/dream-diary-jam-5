@@ -1,11 +1,17 @@
 extends BaseChunk
 
+onready var spinners: Node = $Spinners
+
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
 func _ready() -> void:
 	surrounding_chunks["StartChunk"] = "res://screens/levels/noneuclidian-dream/chunks/StartChunk.tscn"
+
+func _physics_process(delta: float) -> void:
+	for c in spinners.get_children():
+		c.rotate_y(delta)
 
 ###############################################################################
 # Connections                                                                 #

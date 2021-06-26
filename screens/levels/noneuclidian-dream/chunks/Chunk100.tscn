@@ -1,7 +1,34 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://screens/levels/noneuclidian-dream/BaseChunk.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk100.gd" type="Script" id=2]
+[ext_resource path="res://entities/props/fir-tree/FirTree.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 8, 26 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 8, 11 )
+
+[sub_resource type="CapsuleMesh" id=3]
+radial_segments = 5
+rings = 2
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 1, 0.941176, 0.196078, 1 )
+
+[sub_resource type="PrismMesh" id=4]
+material = SubResource( 8 )
+size = Vector3( 2, 2, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+albedo_color = Color( 0.184314, 0.635294, 0.952941, 0.309804 )
+
+[sub_resource type="SphereMesh" id=5]
+material = SubResource( 7 )
+radial_segments = 7
+rings = 2
 
 [node name="Chunk100" instance=ExtResource( 1 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 50, 0, 0 )
@@ -12,22 +39,112 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.036, 7.32877, 0 )
 height = 15.4375
 depth = 50.5113
 
+[node name="StaticBody" type="StaticBody" parent="Wall" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall/StaticBody" index="0"]
+shape = SubResource( 1 )
+
 [node name="Wall3" type="CSGBox" parent="." index="2"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.4193, 7.32877, 23.2045 )
 height = 15.4375
 depth = 14.103
+
+[node name="StaticBody" type="StaticBody" parent="Wall3" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall3/StaticBody" index="0"]
+shape = SubResource( 2 )
 
 [node name="Wall4" type="CSGBox" parent="." index="3"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.7654, 7.32877, 23.2045 )
 height = 15.4375
 depth = 14.103
 
+[node name="StaticBody" type="StaticBody" parent="Wall4" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall4/StaticBody" index="0"]
+shape = SubResource( 2 )
+
 [node name="Wall5" type="CSGBox" parent="." index="4"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.56207, 7.32877, -23.4169 )
 height = 15.4375
 depth = 29.3933
 
+[node name="StaticBody" type="StaticBody" parent="Wall5" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall5/StaticBody" index="0"]
+shape = SubResource( 2 )
+
 [node name="Wall2" type="CSGBox" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1899, 7.32877, 0 )
 height = 15.4375
 depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall2" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall2/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Spinners" type="Node" parent="." index="6"]
+
+[node name="FirTree" parent="Spinners" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 63, 0, 3.41061e-13 )
+
+[node name="FirTree2" parent="Spinners" index="1" instance=ExtResource( 3 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 68, 0, -10 )
+
+[node name="FirTree3" parent="Spinners" index="2" instance=ExtResource( 3 )]
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 67, 0, 4 )
+
+[node name="SpotLight" type="SpotLight" parent="Spinners/FirTree3" index="2"]
+transform = Transform( -0.314705, -0.933013, 0.174494, -0.25, 0.258819, 0.933013, -0.915675, 0.25, -0.314705, -3.8147e-06, 10, 1.90735e-06 )
+spot_range = 11.6618
+
+[node name="FirTree4" parent="Spinners" index="3" instance=ExtResource( 3 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 59, 0, -6 )
+
+[node name="SpotLight" type="SpotLight" parent="Spinners/FirTree4" index="2"]
+transform = Transform( -0.42495, 0.836516, -0.345916, -0.25, 0.258819, 0.933013, 0.87001, 0.482963, 0.0991439, 0, 9, 0 )
+spot_range = 11.6618
+
+[node name="FirTree5" parent="Spinners" index="4" instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 48.2678, 0, 1.47487 )
+
+[node name="FirTree6" parent="Spinners" index="5" instance=ExtResource( 3 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 44.7322, 0, -9.13173 )
+
+[node name="FirTree7" parent="Spinners" index="6" instance=ExtResource( 3 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 53.9246, 0, 1.47487 )
+
+[node name="FirTree8" parent="Spinners" index="7" instance=ExtResource( 3 )]
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 41.1967, 0, 0.0606613 )
+
+[node name="SpotLight" type="SpotLight" parent="Spinners/FirTree8" index="2"]
+transform = Transform( 0.95035, 0.25, 0.185295, -0.25, 0.258819, 0.933013, 0.185295, -0.933013, 0.308469, 0, 7, 0 )
+spot_range = 11.6618
+
+[node name="FirTree9" parent="Spinners" index="8" instance=ExtResource( 3 )]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 32.255, 0, -4.51801 )
+
+[node name="FirTree10" parent="Spinners" index="9" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -1.3411e-07, 0, 1, 0, 1.3411e-07, 0, -1, 43.4153, 0, -5.18788 )
+
+[node name="FirTree11" parent="Spinners" index="10" instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 34.7909, 0, 3.94609 )
+
+[node name="FirTree12" parent="Spinners" index="11" instance=ExtResource( 3 )]
+transform = Transform( -1.3411e-07, 0, 1, 0, 1, 0, -1, 0, -1.3411e-07, 35.4512, 0, -10.9821 )
+
+[node name="Bean" type="MeshInstance" parent="Spinners" index="12"]
+transform = Transform( -0.866025, -0.5, -9.17097e-08, 1.31134e-07, -4.37114e-08, -1, 0.5, -0.866025, 1.03422e-07, 53, 1.31271, -7 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="Spinners/Bean" index="0"]
+transform = Transform( 0.866025, -0.5, 2.72411e-07, -0.5, -0.866025, -4.95675e-08, 2.60699e-07, -9.32789e-08, -1, -3.33786e-06, -0.286537, -1.67182 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Spinners/Bean" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 7.51667e-22, 0, 0, 1, 0.287397, 0, 2.38419e-07 )
+mesh = SubResource( 5 )
+material/0 = null
