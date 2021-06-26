@@ -43,6 +43,20 @@ transform = Transform( 0.0185185, 0, 0, 0, 1, 0, 0, 0, 0.0185185, 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="GroundNodes/Ground2/StaticBody"]
 shape = SubResource( 3 )
 
+[node name="FirTrees" type="Node" parent="."]
+
+[node name="FirTree" parent="FirTrees" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12639, 0, -6.01259 )
+
+[node name="FirTree2" parent="FirTrees" instance=ExtResource( 2 )]
+transform = Transform( 0.460835, 0, 0.887486, 0, 1, 0, -0.887486, 0, 0.460835, -10.9212, 0, -0.118115 )
+
+[node name="FirTree3" parent="FirTrees" instance=ExtResource( 2 )]
+transform = Transform( -0.398109, 0, 0.917338, 0, 1, 0, -0.917338, 0, -0.398109, 0.831562, 0, 4.46028 )
+
+[node name="FirTree4" parent="FirTrees" instance=ExtResource( 2 )]
+transform = Transform( -0.80116, 0, 0.59845, 0, 2.15799, 0, -0.59845, 0, -0.80116, -7.90471, 0, 6.67968 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
@@ -61,18 +75,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11013, 1.05573, -1.46725 )
 
 [node name="LampPost" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28516, 0, 0 )
-
-[node name="FirTree" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12639, 0, -6.01259 )
-
-[node name="FirTree2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.460835, 0, 0.887486, 0, 1, 0, -0.887486, 0, 0.460835, -10.9212, 0, -0.118115 )
-
-[node name="FirTree3" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.398109, 0, 0.917338, 0, 1, 0, -0.917338, 0, -0.398109, 0.831562, 0, 4.46028 )
-
-[node name="FirTree4" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.80116, 0, 0.59845, 0, 2.15799, 0, -0.59845, 0, -0.80116, -7.90471, 0, 6.67968 )
 
 [node name="Nonhumanoid1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.15581 )

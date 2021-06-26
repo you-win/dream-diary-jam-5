@@ -1,32 +1,28 @@
-extends Spatial
+extends Node
 
-onready var area: Area = $Area
+const SPACING: float = 0.4
 
-var can_interact: bool = false
+var counter: float = 0.0
+var can_play_sound: bool = true
+
+onready var step0: AudioStreamPlayer = $Step0
+onready var step1: AudioStreamPlayer = $Step1
+onready var step2: AudioStreamPlayer = $Step2
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
-func _ready() -> void:
-	area.connect("body_entered", self, "_on_body_entered")
-	area.connect("body_exited", self, "_on_body_exited")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		GameManager.main.change_scene("res://screens/levels/forest-dream/the-tower/TheTower.tscn")
+func _physics_process(delta: float) -> void:
+	if counter >= SPACING:
+		can_play_sound = true
+		counter = 0.0
+	else:
+		counter += delta
 
 ###############################################################################
 # Connections                                                                 #
 ###############################################################################
-
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group(GameManager.PLAYER_GROUP):
-		can_interact = true
-
-func _on_body_exited(body: Node) -> void:
-	if body.is_in_group(GameManager.PLAYER_GROUP):
-		can_interact = false
 
 ###############################################################################
 # Private functions                                                           #
@@ -36,4 +32,8 @@ func _on_body_exited(body: Node) -> void:
 # Public functions                                                            #
 ###############################################################################
 
-
+func play_step_sound() -> void:
+	if can_play_sound:
+		var n: int = GameManager.rng.randi_range(0, 2)
+		(self.get("step%s" % n) as AudioStreamPlayer).play(0)
+		can_play_sound = false

@@ -1,4 +1,4 @@
-class_name Player
+class_name Player2DLocked
 extends KinematicBody
 
 const ROTATION_EIGTH: float = PI / 4
@@ -37,12 +37,6 @@ func _ready() -> void:
 	_construct_fsm_states()
 
 func _physics_process(delta: float) -> void:
-	# Camera control
-	if camera_mount.rotation.y != current_camera_rotation:
-		camera_mount.rotation.y = lerp(camera_mount.rotation.y, current_camera_rotation, 0.1)
-	else:
-		camera_mount.rotation.y = fposmod(current_camera_rotation, ROTATION_FULL)
-	
 	# Movement
 	intended_velocity = Vector3.ZERO
 	
@@ -66,12 +60,6 @@ func _physics_process(delta: float) -> void:
 
 	# Friction
 	current_velocity = lerp(current_velocity, Vector3.ZERO, FRICTION)
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("rotate_camera_right"):
-		current_camera_rotation += ROTATION_EIGTH
-	elif event.is_action_pressed("rotate_camera_left"):
-		current_camera_rotation -= ROTATION_EIGTH
 
 func _exit_tree() -> void:
 	fsm.cleanup()

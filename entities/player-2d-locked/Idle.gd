@@ -1,32 +1,12 @@
-extends Spatial
-
-onready var area: Area = $Area
-
-var can_interact: bool = false
+extends FSMState
 
 ###############################################################################
 # Builtin functions                                                           #
 ###############################################################################
 
-func _ready() -> void:
-	area.connect("body_entered", self, "_on_body_entered")
-	area.connect("body_exited", self, "_on_body_exited")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		GameManager.main.change_scene("res://screens/levels/forest-dream/the-tower/TheTower.tscn")
-
 ###############################################################################
 # Connections                                                                 #
 ###############################################################################
-
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group(GameManager.PLAYER_GROUP):
-		can_interact = true
-
-func _on_body_exited(body: Node) -> void:
-	if body.is_in_group(GameManager.PLAYER_GROUP):
-		can_interact = false
 
 ###############################################################################
 # Private functions                                                           #
@@ -36,4 +16,18 @@ func _on_body_exited(body: Node) -> void:
 # Public functions                                                            #
 ###############################################################################
 
+func on_enter() -> void:
+	obj.current_animation = "Idle"
+	obj.anim_player.play(obj.current_animation)
 
+func run(delta: float) -> void:
+	if (obj.intended_velocity.x != 0 or obj.intended_velocity.z != 0):
+		fsm.switch_state_now(delta, fsm.states.Move)
+		return
+
+	if obj.intended_velocity.y > 0:
+		fsm.switch_state_now(delta, fsm.states.Jump)
+		return
+
+func on_exit() -> void:
+	pass

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0.992157, 0.654902, 1 )
+emission_enabled = true
+emission = Color( 0.933333, 1, 0.501961, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+radius = 2.0
+radial_segments = 6
+rings = 2
+is_hemisphere = true
+
+[sub_resource type="CylinderShape" id=3]
+radius = 1.5323
+height = 1.08401
+
+[node name="LightSconce" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.37114e-08 )
+omni_range = 9.0
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.519894, 2.27253e-08 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
