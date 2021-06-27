@@ -24,6 +24,8 @@ func _ready() -> void:
 func _unhandled_input(_event: InputEvent) -> void:
 	if (is_player_in_range and Input.is_action_just_pressed("interact")):
 		play_next_track()
+		if get_node_or_null("Sprite3D"):
+			$Sprite3D.queue_free()
 
 ###############################################################################
 # Connections                                                                 #

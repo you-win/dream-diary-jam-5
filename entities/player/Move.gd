@@ -34,6 +34,12 @@ func run(delta: float) -> void:
 		h_movement = h_movement.rotated(-obj.camera_mount.rotation.y).normalized() * obj.SPEED * delta
 		obj.intended_velocity = Vector3(h_movement.x, obj.intended_velocity.y, h_movement.y)
 
+	# TODO included because I ran out of time for level design
+	# so instead go fast
+	if Input.is_action_pressed("sprint"):
+		obj.intended_velocity.x *= obj.SPRINT_MULTIPLIER
+		obj.intended_velocity.z *= obj.SPRINT_MULTIPLIER
+	
 	# obj.current_velocity = obj.move_and_slide(obj.intended_velocity, Vector3.UP)
 	obj.current_velocity = obj.move_and_slide_with_snap(obj.intended_velocity, Vector3.DOWN, Vector3.UP, true)
 	

@@ -8,6 +8,7 @@ const FRICTION: float = 0.1
 const SPEED: float = 250.0
 const JUMP: float = 650.0
 const MAX_FALL_SPEED: float = -10.0
+const SPRINT_MULTIPLIER: float = 4.0
 
 const GRAVITY: float = -600.0
 

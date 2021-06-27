@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk102.gd" type="Script" id=1]
 
@@ -14,12 +14,15 @@ extents = Vector3( 25, 0.25, 25 )
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 25, 25, 25 )
 
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1, 8, 26 )
+
 [node name="Chunk102" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -100 )
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.262115, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.323482, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -39,7 +42,23 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.09556
 height = 15.4375
 depth = 50.5113
 
+[node name="StaticBody" type="StaticBody" parent="Wall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall/StaticBody"]
+shape = SubResource( 5 )
+
 [node name="Wall2" type="CSGBox" parent="."]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0955696, 7.32877, 15.168 )
 height = 15.4375
 depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 19, 4 )
+spot_range = 31.0
+
+[node name="Tween" type="Tween" parent="SpotLight"]

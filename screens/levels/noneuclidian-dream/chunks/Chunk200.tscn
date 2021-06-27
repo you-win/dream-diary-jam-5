@@ -1,8 +1,182 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://screens/levels/noneuclidian-dream/BaseChunk.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk200.gd" type="Script" id=2]
+[ext_resource path="res://entities/props/stool/Stool.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/props/hub-desk/HubDesk.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/props/rubber-duck/RubberDuck.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/props/chair/Chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/props/wood-board/WoodBoard.tscn" type="PackedScene" id=7]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 8, 26 )
+
+[sub_resource type="SphereShape" id=2]
+radius = 2.71516
 
 [node name="Chunk200" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0 )
 script = ExtResource( 2 )
+
+[node name="Wall" type="CSGBox" parent="." index="1"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 24.0956, 7.32877, 0.515823 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Wall2" type="CSGBox" parent="." index="2"]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -0.904434, 7.32877, 22.5158 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall2" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall2/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Wall3" type="CSGBox" parent="." index="3"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -24.9044, 7.32877, -33.4842 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall3" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall3/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Wall4" type="CSGBox" parent="." index="4"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -24.9044, 7.32877, 32.5158 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall4" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall4/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="DeskItems" type="Node" parent="." index="5"]
+
+[node name="Stool" parent="DeskItems" index="0" instance=ExtResource( 3 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 100, 0, 0 )
+
+[node name="HubDesk" parent="DeskItems" index="1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 4 )
+
+[node name="RubberDuck" parent="DeskItems" index="2" instance=ExtResource( 5 )]
+transform = Transform( -0.173205, 0, -0.1, 0, 0.2, 0, 0.1, 0, -0.173205, 100.628, 1.04842, 3.94574 )
+
+[node name="RubberDuck2" parent="DeskItems" index="3" instance=ExtResource( 5 )]
+transform = Transform( -0.193185, 0, 0.0517638, 0, 0.2, 0, -0.0517638, 0, -0.193185, 99.2757, 1.04842, 3.94574 )
+
+[node name="RubberDuck3" parent="DeskItems" index="4" instance=ExtResource( 5 )]
+transform = Transform( -0.396285, 0, -0.05439, 0, 0.4, 0, 0.05439, 0, -0.396285, 99.9141, 1.04842, 3.94574 )
+
+[node name="SpotLight" type="SpotLight" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.91047, 3.04041 )
+spot_range = 9.90345
+
+[node name="YellowSpike" type="CSGCylinder" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7339, 2.76479, -8.1823 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="YellowSpike" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowSpike/StaticBody" index="0"]
+shape = SubResource( 2 )
+
+[node name="OmniLight" type="OmniLight" parent="YellowSpike" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 0.921569, 1, 0, 1 )
+omni_range = 11.6696
+
+[node name="YellowSpike2" type="CSGCylinder" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52688, 2.76479, 8.8177 )
+radius = 3.0
+height = 7.0
+cone = true
+
+[node name="StaticBody" type="StaticBody" parent="YellowSpike2" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02223, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowSpike2/StaticBody" index="0"]
+shape = SubResource( 2 )
+
+[node name="OmniLight" type="OmniLight" parent="YellowSpike2" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35114, 0 )
+light_color = Color( 0.921569, 1, 0, 1 )
+omni_range = 11.6696
+
+[node name="Chairs" type="Node" parent="." index="9"]
+
+[node name="Chair" parent="Chairs" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 120, 0, 17 )
+
+[node name="RubberDuck" parent="Chairs/Chair" index="2" instance=ExtResource( 5 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.03077, 0.865145, 0.277081 )
+
+[node name="SpotLight" type="SpotLight" parent="Chairs/Chair" index="3"]
+transform = Transform( 0.25, -1.09278e-08, -1.09278e-08, 1.09278e-08, -1.09278e-08, 0.25, -1.09278e-08, -0.25, -1.09278e-08, 0, 2.25, 0 )
+light_color = Color( 1, 0.937255, 0, 1 )
+spot_range = 14.7704
+
+[node name="Chair2" parent="Chairs" index="1" instance=ExtResource( 6 )]
+transform = Transform( -1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 120, 0, 9 )
+
+[node name="RubberDuck" parent="Chairs/Chair2" index="2" instance=ExtResource( 5 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.03077, 0.865145, 0.277081 )
+
+[node name="SpotLight" type="SpotLight" parent="Chairs/Chair2" index="3"]
+transform = Transform( 0.25, -1.09278e-08, -1.09278e-08, 1.09278e-08, -1.09278e-08, 0.25, -1.09278e-08, -0.25, -1.09278e-08, 0, 2.25, 0 )
+light_color = Color( 0.921569, 0, 1, 1 )
+spot_range = 14.7704
+
+[node name="Chair3" parent="Chairs" index="2" instance=ExtResource( 6 )]
+transform = Transform( -1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 120, 0, 1 )
+
+[node name="RubberDuck" parent="Chairs/Chair3" index="2" instance=ExtResource( 5 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.03077, 0.865145, 0.277081 )
+
+[node name="SpotLight" type="SpotLight" parent="Chairs/Chair3" index="3"]
+transform = Transform( 0.25, -1.09278e-08, -1.09278e-08, 1.09278e-08, -1.09278e-08, 0.25, -1.09278e-08, -0.25, -1.09278e-08, 0, 2.25, 0 )
+light_color = Color( 0.0784314, 1, 0, 1 )
+spot_range = 14.7704
+
+[node name="Chair4" parent="Chairs" index="3" instance=ExtResource( 6 )]
+transform = Transform( -1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 120, 0, -7 )
+
+[node name="RubberDuck" parent="Chairs/Chair4" index="2" instance=ExtResource( 5 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.96923, 0.865145, 0.277081 )
+
+[node name="SpotLight" type="SpotLight" parent="Chairs/Chair4" index="3"]
+transform = Transform( 0.25, -1.09278e-08, -1.09278e-08, 1.09278e-08, -1.09278e-08, 0.25, -1.09278e-08, -0.25, -1.09278e-08, 0, 2.25, 0 )
+light_color = Color( 0.0784314, 0, 1, 1 )
+spot_range = 14.7704
+
+[node name="Chair5" parent="Chairs" index="4" instance=ExtResource( 6 )]
+transform = Transform( -1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 120, 0, -14.9673 )
+
+[node name="RubberDuck" parent="Chairs/Chair5" index="2" instance=ExtResource( 5 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.96923, 0.865145, 0.277081 )
+
+[node name="SpotLight" type="SpotLight" parent="Chairs/Chair5" index="3"]
+transform = Transform( 0.25, -1.09278e-08, -1.09278e-08, 1.09278e-08, -1.09278e-08, 0.25, -1.09278e-08, -0.25, -1.09278e-08, 0, 2.25, 0 )
+light_color = Color( 0, 0.835294, 1, 1 )
+spot_range = 14.7704
+
+[node name="Boards" type="Spatial" parent="." index="10"]
+
+[node name="WoodBoard" parent="Boards" index="0" instance=ExtResource( 7 )]
+transform = Transform( 2.98023e-08, -1, 0, 0.5, 1.49012e-08, 0.866025, -0.866025, -2.58096e-08, 0.5, 10.9471, 2.25, 19.6747 )
+
+[node name="WoodBoard3" parent="Boards" index="1" instance=ExtResource( 7 )]
+transform = Transform( 2.98023e-08, -1, 0, 0.5, 1.49012e-08, 0.866025, -0.866025, -2.58096e-08, 0.5, 12.9471, 2.25, 19.6747 )
+
+[node name="WoodBoard2" parent="Boards" index="2" instance=ExtResource( 7 )]
+transform = Transform( 1, 7.35137e-08, 0, -3.67569e-08, 0.5, 0.866025, 6.36647e-08, -0.866025, 0.5, 11.9471, 2.75, 18.8087 )

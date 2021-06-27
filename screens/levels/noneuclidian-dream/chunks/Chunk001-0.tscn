@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://entities/items/MuseumDevice.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk001-0.gd" type="Script" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -154,3 +155,10 @@ depth = 50.5113
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall3/StaticBody"]
 shape = SubResource( 6 )
+
+[node name="MuseumDevice" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.61433, 0 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0 )
+spot_range = 14.2765

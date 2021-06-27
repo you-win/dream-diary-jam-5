@@ -20,6 +20,8 @@ var far_buildings: Spatial
 func _ready() -> void:
 	far_buildings = FarBuildings.instance()
 	
+	yield(get_tree(), "idle_frame")
+	
 	$TopPlatform/LoadFarBuildingsTrigger.connect("body_entered", self, "_on_load_far_buildings")
 	$TopPlatform/LoadFarBuildingsTrigger.connect("body_exited", self, "_on_unload_far_buildings")
 

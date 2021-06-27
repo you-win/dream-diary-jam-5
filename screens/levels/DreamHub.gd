@@ -1,7 +1,7 @@
 extends Spatial
 
-onready var blocker: StaticBody = $ForestGate/Blocker
-onready var forest_gate_blocker: int = $ForestGate/Blocker.get_instance_id()
+onready var billboard_blocker: StaticBody = $ForestGate/BillboardBlocker
+onready var museum_blocker: StaticBody = $ForestGate/MuseumBlocker
 
 var player
 
@@ -19,16 +19,6 @@ func _ready() -> void:
 	yield(get_tree(), "idle_frame")
 	
 	BGM.play_music(BGM.Track.NOT_SO_QUIETLY)
-
-func _process(delta: float) -> void:
-	if player.get_slide_count() > 1:
-		for c in player.get_slide_count():
-			var collision: KinematicCollision = player.get_slide_collision(c)
-			if collision.collider_id != forest_gate_blocker:
-				continue
-			
-			# if player.item == something
-			# $ForestGate/Blocker.queue_free()
 
 ###############################################################################
 # Connections                                                                 #

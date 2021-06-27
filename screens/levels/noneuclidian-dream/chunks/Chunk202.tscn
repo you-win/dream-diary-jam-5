@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://screens/levels/noneuclidian-dream/chunks/Chunk202.gd" type="Script" id=1]
 
@@ -13,6 +13,9 @@ extents = Vector3( 25, 0.25, 25 )
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 25, 25, 25 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1, 8, 26 )
 
 [node name="Chunk202" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -100 )
@@ -33,3 +36,43 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26212, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
 shape = SubResource( 4 )
+
+[node name="Wall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 23.0956, 7.32877, -0.149033 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Wall2" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0955658, 7.32877, -24.4842 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Wall3" type="CSGBox" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22.9044, 7.32877, -31.4842 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Wall4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -22.9044, 7.32877, 36.5715 )
+height = 15.4375
+depth = 50.5113
+
+[node name="StaticBody" type="StaticBody" parent="Wall4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall4/StaticBody"]
+shape = SubResource( 5 )

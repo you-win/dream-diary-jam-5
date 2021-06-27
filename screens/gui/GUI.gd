@@ -55,7 +55,7 @@ func _on_inventory_action(item_name: String, action_name: String) -> void:
 		"Forest Key":
 			match action_name:
 				"equip":
-					add_regular_log("You firmly grasped the key.")
+					add_regular_log("You firmly grasped the key. Nothing happens.")
 				"use":
 					add_fancy_log([
 						{
@@ -75,7 +75,8 @@ func _on_inventory_action(item_name: String, action_name: String) -> void:
 					# Check if in dream hub, if so, allow entry to new zone
 					var dream_hub = GameManager.main.viewport.get_node_or_null("DreamHub")
 					if dream_hub:
-						dream_hub.blocker.queue_free()
+						dream_hub.billboard_blocker.queue_free()
+						add_regular_log("You feel like something is different.")
 				"inspect":
 					add_fancy_log([
 						{
@@ -88,6 +89,46 @@ func _on_inventory_action(item_name: String, action_name: String) -> void:
 						},
 						{
 							"text": "key.",
+							"effects": ["normal"]
+						}
+					])
+		"Museum Device":
+			match action_name:
+				"equip":
+					add_regular_log("The device is too big for you to equip.")
+				"use":
+					add_regular_log("You mash some buttons on the device.")
+					add_fancy_log([
+						{
+							"text": "Some ",
+							"effects": ["normal"]
+						},
+						{
+							"text": "crazy ",
+							"effects": ["wave", "shake"]
+						},
+						{
+							"text": "text appears on the screen.",
+							"effects": ["normal"]
+						}
+					])
+					# Check if in dream hub, if so, allow entry to new zone
+					var dream_hub = GameManager.main.viewport.get_node_or_null("DreamHub")
+					if dream_hub:
+						dream_hub.museum_blocker.queue_free()
+						add_regular_log("You feel like something is gone.")
+				"inspect":
+					add_fancy_log([
+						{
+							"text": "'Who ",
+							"effects": ["normal"]
+						},
+						{
+							"text": "made this!?",
+							"effects": ["wave", "shake"]
+						},
+						{
+							"text": "' You think to yourself.",
 							"effects": ["normal"]
 						}
 					])
